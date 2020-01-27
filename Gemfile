@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+#enable Cross-Origin Resource Sharing (CORS), in order to make cross-origin AJAX requests possible
+gem 'rack-cors'
 #provides a layer between the model and the controller, github: https://github.com/rails-api/active_model_serializers 
 gem 'active_model_serializers'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
