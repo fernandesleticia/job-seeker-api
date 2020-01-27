@@ -18,7 +18,7 @@ The project was developed using Ruby On Rails.
 ```bash
 $ 
 ```
-## Deploy on Heroku
+## Deploy
 
 * 
 
