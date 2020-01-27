@@ -1,24 +1,39 @@
-# README
+# Job Seeker API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+>A API that provides an easy and intuitive method of create, activate and list vacancies.
+The demo is running on [Demo]()
 
-* System dependencies
+## Technologies
+The project was developed using Ruby On Rails.
 
-* Configuration
 
-* Database creation
+## Dependencies
+* Rails - [Online Documentation](https://rubyonrails.org/)
+* 
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+```bash
+$ 
+```
+## Deploy on Heroku
 
-* Services (job queues, cache servers, search engines, etc.)
+* 
 
-* Deployment instructions
-
-* ...
+```bash
+$ 
+```
+* 
+```bash
+$ 
+```
+* 
+```bash
+$ 
+```
+* 
+```bash
+$ 
+```
