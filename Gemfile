@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'pg', '~> 0.18.4'
+
 #enable Cross-Origin Resource Sharing (CORS), in order to make cross-origin AJAX requests possible
 gem 'rack-cors'
 #provides a layer between the model and the controller, github: https://github.com/rails-api/active_model_serializers 
@@ -36,14 +38,15 @@ group :development, :test do
   # Use RSpec for specs
   gem 'rspec-rails'
 
-  # Use Factory Girl for generating random test data
-  gem 'factory_girl_rails'
+  # generating random test data https://github.com/thoughtbot/factory_bot_rails
+  gem "factory_bot_rails"
 end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'faker'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 

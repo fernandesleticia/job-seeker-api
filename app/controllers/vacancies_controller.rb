@@ -2,7 +2,7 @@
     class VacanciesController < ApplicationController
       before_action :set_vacancy, only: [:show, :update, :destroy]
 
-      # GET /v1/vacancies
+      # GET /vacancies
       def index
         @vacancies = Vacancy.all
 
