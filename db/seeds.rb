@@ -6,12 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# 10.times  do
+# 	Vacancy.create({
+# 		partnerId: Faker::IDNumber.brazilian_id,
+#         title: Faker::Job.title,
+#         categoryId: Faker::Number.between(from: 1, to: 10),
+#         expiresAt: Faker::Date.in_date_period,
+#         status: "draft"
+#     })
+       
+# end
+
 10.times  do
-	Vacancy.create({
-		partnerId: Faker::IDNumber.brazilian_id,
-        title: Faker::Job.title,
-        categoryId: Faker::Number.between(from: 1, to: 10),
-        expiresAt: Faker::Date.in_date_period,
-        status: "draft"
-	})
+    Category.create({
+        description: Faker::Job.field
+}) 
 end

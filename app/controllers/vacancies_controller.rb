@@ -1,4 +1,5 @@
-
+    require 'net/http'
+    
     class VacanciesController < ApplicationController
       before_action :set_vacancy, only: [:show, :update, :destroy]
 
@@ -37,6 +38,29 @@
       # DELETE /vacancies/1
       def destroy
         @vacancy.destroy
+      end
+
+      # /vacancies/{:id}/activate
+      def activate
+        @vacancy = Vacancy.find(params[:id])
+        @vacancy.update_attribute(:status, "activated")
+      end
+
+      #/category/{:id}
+      def percentage
+        @vacancy = Vacancy.find(params[:id])
+        @results = Vacancy.percent_by_category
+        render json: @results
+      end
+
+      #/loadJobs
+      def loadJobs
+        url = URI.parse('http://localhost:8080/jobs')
+        req = Net::HTTP::Get.new(url.to_s)
+        res = Net::HTTP.start(url.host, url.port) {|http|
+          http.request(req)
+        }
+        puts res.body
       end
 
       private
