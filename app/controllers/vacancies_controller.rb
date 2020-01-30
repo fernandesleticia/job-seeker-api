@@ -1,4 +1,5 @@
     require 'net/http'
+    require 'json'
     
     class VacanciesController < ApplicationController
       before_action :set_vacancy, only: [:show, :update, :destroy]
@@ -53,14 +54,28 @@
         render json: @results
       end
 
-      #/loadJobs
+      # /loadJobs
       def loadJobs
         url = URI.parse('http://localhost:8080/jobs')
         req = Net::HTTP::Get.new(url.to_s)
         res = Net::HTTP.start(url.host, url.port) {|http|
           http.request(req)
         }
-        puts res.body
+        jobs = JSON.parse res.body
+        saveJobs jobs
+      end
+
+      def saveJobs jobs
+        jobs.each do |job| 
+          puts job
+          Vacancy.create({
+                    partnerId: job['partnerId'],
+                    title: job['title'],
+                    categoryId: job['categoryId'],
+                    expiresAt: job['expiresAt'],
+                    status: "draft"
+                })
+        end
       end
 
       private
