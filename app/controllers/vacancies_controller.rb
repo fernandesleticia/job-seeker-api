@@ -49,8 +49,7 @@
 
       #/category/{:id}
       def percentage
-        @vacancy = Vacancy.find(params[:id])
-        @results = Vacancy.percent_by_category
+        @results = Vacancy.percent_by_category params[:id]
         render json: @results
       end
 
