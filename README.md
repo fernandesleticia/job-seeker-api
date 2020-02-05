@@ -39,7 +39,7 @@ $ bundle exec rspec
 * load the jobs from job-seeker-server
 >'/loadJobs'
 
-## Deploy
+## Dockerizing 
 
 * Create the Dockerfile and the entrypoint.sh
 * Create the docker-compose.yml:
